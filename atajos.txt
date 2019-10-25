@@ -1,0 +1,80 @@
+*******************************
+**********CON DOTENV***********
+*******************************
+python -m venv myven (entorno virtual)
+pip install Flask (instalamos flask)
+pip install Flask && pip freeze > requeriments.txt (deply de lo que se instala)
+set "FLASK_ENV=developmen" (Pasar de "PRODUCCION" a "DESARROLLADOR")
+pip install python-dotenv (esta libreria nos ayudara a mantener una mejor administracion y configuracion para la app)
+pip install python-dotenv && pip freeze > requeriments.txt
+pymysql (mysql db) o psycopg2 (postgresql db)
+
+
+*******************************
+***********CON ORM*************
+*******************************
+python -m venv myven (entorno virtual)
+pip install Flask (instalamos flask)
+pip install Flask && pip freeze > requeriments.txt (deply de lo que se instala)
+set "FLASK_ENV=developmen" (Pasar de "PRODUCCION" a "DESARROLLADOR")
+pip install python-dotenv (esta libreria nos ayudara a mantener una mejor administracion y configuracion para la app)
+pip install python-dotenv && pip freeze > requeriments.txt
+pymysql (mysql db) o psycopg2 (postgresql db)
+ORM orator:
+pip install orator && pip freeze > requeriments.txt
+
+-> instalar requeriments.txt = pip install -r requeriments.txt
+
+nota:
+instalar -  pip install cryptography
+
+******************************
+creando el modelo con comando:
+******************************
+-> orator make:model users
+
+********************************
+dentro de una carpeta existente:
+********************************
+-> orator make:model -p app/models
+
+*******************************************************
+Creacion de carpeta migrations + el nombre de la tabla:
+*******************************************************
+->orator make:migration create_users_table  --table=users --create
+
+*************************
+Ejecutar las migraciones:
+*************************
+orator migrate -c database/orator.py
+(le damos en 'yes')
+
+*mirar los codigos: orator
+
+*ver el status: orator migrate:status -c database/orator.py
+
+*******************
+generar el seeder:
+*******************
+
+orator make:seed user_table_seeder
+
+*********************
+ejecutar los seeder:
+*********************
+
+orator db:seed -c database/orator.py
+
+
+*************************************
+*******JSON WEB TOKEN - JWT**********
+*************************************
+
+pip install PyJWT && pip freeze > requeriments.txt
+
+*************************************
+**************BCRYPT*****************
+*************************************
+
+pip install bcrypt (global)
+pip install bcrypt && pip freeze > requeriments.txt
